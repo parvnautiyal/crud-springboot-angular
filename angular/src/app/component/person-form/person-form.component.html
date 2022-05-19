@@ -1,0 +1,54 @@
+<h1>Add a Person</h1>
+<div class="card my-5">
+  <div class="card-body bg-dark">
+    <form (ngSubmit)="onSubmit()" #personForm="ngForm">
+      <div class="form-group" style="color: white">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          [(ngModel)]="person.name"
+          class="form-control"
+          id="name"
+          name="name"
+          required
+          #name="ngModel"
+          placeholder="Full Name"
+        />
+      </div>
+      <div class="form-group" style="color: white">
+        <label for="name">Email</label>
+        <input
+          type="text"
+          [(ngModel)]="person.email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+          #name="ngModel"
+          placeholder="<Add Email>@gmail.com"
+        />
+      </div>
+      <div class="form-group" style="color: white">
+        <label for="name">Phone</label>
+        <input
+          type="text"
+          [(ngModel)]="person.phone"
+          class="form-control"
+          id="phone"
+          name="phone"
+          required
+          #name="ngModel"
+          placeholder="+91 <Add Number>"
+        />
+      </div>
+      <br />
+      <button
+        type="submit"
+        [disabled]="!personForm.form.valid"
+        class="btn btn-info"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
